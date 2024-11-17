@@ -13,7 +13,6 @@ const ErrorHandler = require("./util/ErrorHandler.js");
 const listingRouter = require("./routes/listing.js");
 const reviewsRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
-const home = require("./routes/home.js");
 const MongoStore=require("connect-mongo");
 const session = require("express-session")
 const flash=require("connect-flash");
@@ -99,7 +98,6 @@ app.use((req, res, next) => {
     next();
 });
 //Routes
-app.use("/", home);
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewsRouter)
 app.use("/",userRouter)
