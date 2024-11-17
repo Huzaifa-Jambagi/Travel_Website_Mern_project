@@ -82,6 +82,10 @@ app.use(flash());
 //     console.log(`Received request for ${req.url}`);
 //     next();
 // });
+app.get('/', (req, res) => {
+  res.redirect('/listings');
+});
+
 
 
 //Authentication middlewares
