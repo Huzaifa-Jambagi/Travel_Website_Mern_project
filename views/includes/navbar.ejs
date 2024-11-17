@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand" href="/listings">
+      <i class="fa-regular fa-compass"></i>
+    </a>
+
+    <!-- Toggler Button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <!-- Left Aligned Links -->
+      <div class="navbar-nav">
+        <!-- "Explore" is hidden on mobile -->
+        <a class="nav-link d-none d-md-block" href="/listings">Explore</a>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="navbar-nav mx-auto" style="flex-grow: 1; max-width: 40vw;">
+        <form class="d-flex" action="/listings/search" method="get" style="width: 100%;">
+          <input
+            class="form-control me-2"
+            type="search"
+            name="query"
+            placeholder="Search by title or keyword"
+            aria-label="Search"
+          >
+          <button class="btn btn-outline-danger" type="submit">Search</button>
+        </form>
+      </div>
+
+      <!-- Right Aligned Links -->
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings/add">Add your home</a>
+
+        <% if (!user) { %>
+          <a class="nav-link active" aria-current="page" href="/signup" id="signup"><b>Sign up</b></a>
+          <a class="nav-link" href="/login" id="login"><b>Log in</b></a>
+        <% } %>
+        <% if (user) { %>
+          <a class="nav-link" href="/logout" id="logout"><b>Log out</b></a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

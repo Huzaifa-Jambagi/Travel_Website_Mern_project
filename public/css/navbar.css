@@ -1,0 +1,6 @@
+#signup, #login, #logout {
+    font-weight: 350!important; /* Set lighter font weight by default */
+}
+
+#signup:hover, #login:hover, #logout:hover {
+font-weight: 400!important;}
